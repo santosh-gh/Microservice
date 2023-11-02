@@ -14,7 +14,7 @@ pool:
   vmImage: 'ubuntu-latest'
  
 variables:
-  ImageName: 'e880613/mycoreimage:$(Build.BuildId)'
+  ImageName: 'e880613/coreimage10:$(Build.BuildId)'
  
 stages:
 - stage: Build
@@ -29,7 +29,7 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'Docker Hub'
         command: 'Build an image'
-        dockerFile: '**/src/Dockerfile'
+        dockerFile: './src/NetCoreWeb/Dockerfile'
         imageName: '$(ImageName)'
         includeLatestTag: true
         useDefaultContext: false

@@ -11,8 +11,8 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["./NetCoreWeb.csproj", "NetCoreWeb/"]
-RUN dotnet restore "./NetCoreWeb/NetCoreWeb.csproj"
+COPY ["NetCoreWeb.csproj", "NetCoreWeb/"]
+RUN dotnet restore "NetCoreWeb/NetCoreWeb.csproj"
 WORKDIR "/src/NetCoreWeb"
 COPY . .
 
